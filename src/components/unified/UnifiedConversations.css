@@ -1,0 +1,13 @@
+.unified-conversations {
+  height: calc(100vh - 60px);
+  overflow: auto;
+  background: #f8f9fb;
+}
+
+.conversation-table-shell {
+  overflow: hidden;
+}
+
+.timeline-item {
+  background: #fff;
+}

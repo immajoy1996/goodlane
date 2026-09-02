@@ -1,0 +1,11 @@
+.agent-page {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.draft-card {
+  background: #f8fafc;
+}

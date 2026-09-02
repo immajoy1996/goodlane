@@ -1,0 +1,782 @@
+[
+  {
+    "mcNumber": "68333",
+    "companyName": "Reed Barlus LLC",
+    "primaryContact": "Reed Barlus",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.8,
+    "loadsCompletedWithGoodlane": 14,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "107654",
+    "companyName": "Pinnacle Freight Inc",
+    "primaryContact": "Raj Patel",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "PA-DE",
+      "Mid-Atlantic"
+    ],
+    "reliabilityScore": 4.2,
+    "loadsCompletedWithGoodlane": 12,
+    "avgResponseTimeHours": 2.5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": "Responsive on Box Truck lanes in PA/DE corridor."
+  },
+  {
+    "mcNumber": "109876",
+    "companyName": "Nkechi Adeyemi LLC",
+    "primaryContact": "Nkechi Adeyemi",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 17,
+    "avgResponseTimeHours": 7,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "166960",
+    "companyName": "Marie Vale LLC",
+    "primaryContact": "Marie Vale",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.5,
+    "loadsCompletedWithGoodlane": 1,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "218765",
+    "companyName": "William Osei LLC",
+    "primaryContact": "William Osei",
+    "equipmentTypes": [
+      "Refrigerated"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4,
+    "loadsCompletedWithGoodlane": 6,
+    "avgResponseTimeHours": 6,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "219876",
+    "companyName": "Baraka Mwangi LLC",
+    "primaryContact": "Baraka Mwangi",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 17,
+    "avgResponseTimeHours": 7,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "234567",
+    "companyName": "Dale Buchanan LLC",
+    "primaryContact": "Dale Buchanan",
+    "equipmentTypes": [
+      "Flatbed"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.2,
+    "loadsCompletedWithGoodlane": 8,
+    "avgResponseTimeHours": 8,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "234891",
+    "companyName": "Mike Harrington LLC",
+    "primaryContact": "Mike Harrington",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 12,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "321654",
+    "companyName": "Sandra Pellegrino LLC",
+    "primaryContact": "Sandra Pellegrino",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.4,
+    "loadsCompletedWithGoodlane": 15,
+    "avgResponseTimeHours": 5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "329876",
+    "companyName": "Benny LLC",
+    "primaryContact": "Benny",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 17,
+    "avgResponseTimeHours": 7,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "330987",
+    "companyName": "Colleen Fitzgerald LLC",
+    "primaryContact": "Colleen Fitzgerald",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 8,
+    "avgResponseTimeHours": 8,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "345678",
+    "companyName": "Patricia Ramos LLC",
+    "primaryContact": "Patricia Ramos",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.8,
+    "loadsCompletedWithGoodlane": 19,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "345891",
+    "companyName": "Angela Kim LLC",
+    "primaryContact": "Angela Kim",
+    "equipmentTypes": [
+      "Refrigerated"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 12,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "440987",
+    "companyName": "Denise Johansson LLC",
+    "primaryContact": "Denise Johansson",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 8,
+    "avgResponseTimeHours": 8,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "441098",
+    "companyName": "Omar Washington LLC",
+    "primaryContact": "Omar Washington",
+    "equipmentTypes": [
+      "Flatbed"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.3,
+    "loadsCompletedWithGoodlane": 19,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "456012",
+    "companyName": "Frank Kowalczyk LLC",
+    "primaryContact": "Frank Kowalczyk",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 13,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "456789",
+    "companyName": "Jason Tran LLC",
+    "primaryContact": "Jason Tran",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.9,
+    "loadsCompletedWithGoodlane": 10,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "538772",
+    "companyName": "Unknown Carrier LLC",
+    "primaryContact": "Unknown",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 13,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "543210",
+    "companyName": "Kevin Doherty LLC",
+    "primaryContact": "Kevin Doherty",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.5,
+    "loadsCompletedWithGoodlane": 11,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "567123",
+    "companyName": "Vincent Caruso LLC",
+    "primaryContact": "Vincent Caruso",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.3,
+    "loadsCompletedWithGoodlane": 4,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "567234",
+    "companyName": "Desmond Okafor LLC",
+    "primaryContact": "Desmond Okafor",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.9,
+    "loadsCompletedWithGoodlane": 15,
+    "avgResponseTimeHours": 5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "663210",
+    "companyName": "Gene Palumbo LLC",
+    "primaryContact": "Gene Palumbo",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.5,
+    "loadsCompletedWithGoodlane": 11,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "678234",
+    "companyName": "Mohammed Al-Rashid LLC",
+    "primaryContact": "Mohammed Al-Rashid",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.9,
+    "loadsCompletedWithGoodlane": 15,
+    "avgResponseTimeHours": 5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "678901",
+    "companyName": "Robert Nguyen LLC",
+    "primaryContact": "Robert Nguyen",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 2,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "712843",
+    "companyName": "Carlos Mendez LLC",
+    "primaryContact": "Carlos Mendez",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.8,
+    "loadsCompletedWithGoodlane": 4,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "723891",
+    "companyName": "Shaun McIntyre LLC",
+    "primaryContact": "Shaun McIntyre",
+    "equipmentTypes": [
+      "Flatbed"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 12,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "765432",
+    "companyName": "Hector Morales LLC",
+    "primaryContact": "Hector Morales",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.7,
+    "loadsCompletedWithGoodlane": 13,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "774321",
+    "companyName": "Priyanka Mehta LLC",
+    "primaryContact": "Priyanka Mehta",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.1,
+    "loadsCompletedWithGoodlane": 2,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "789012",
+    "companyName": "Amara Diallo LLC",
+    "primaryContact": "Amara Diallo",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 13,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "876543",
+    "companyName": "Diane Worthington LLC",
+    "primaryContact": "Diane Worthington",
+    "equipmentTypes": [
+      "Refrigerated"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.8,
+    "loadsCompletedWithGoodlane": 4,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "885432",
+    "companyName": "Clint Beauregard LLC",
+    "primaryContact": "Clint Beauregard",
+    "equipmentTypes": [
+      "Flatbed"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.7,
+    "loadsCompletedWithGoodlane": 13,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "887642",
+    "companyName": "Tony Ferrara LLC",
+    "primaryContact": "Tony Ferrara",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.7,
+    "loadsCompletedWithGoodlane": 3,
+    "avgResponseTimeHours": 3,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "891234",
+    "companyName": "Ivan Sokolowski LLC",
+    "primaryContact": "Ivan Sokolowski",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.9,
+    "loadsCompletedWithGoodlane": 15,
+    "avgResponseTimeHours": 5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "945231",
+    "companyName": "Dave Kowalski LLC",
+    "primaryContact": "Dave Kowalski",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.6,
+    "loadsCompletedWithGoodlane": 12,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "987654",
+    "companyName": "Thomas Pietrzak LLC",
+    "primaryContact": "Thomas Pietrzak",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.4,
+    "loadsCompletedWithGoodlane": 15,
+    "avgResponseTimeHours": 5,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "996543",
+    "companyName": "Fatima Diarra LLC",
+    "primaryContact": "Fatima Diarra",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.8,
+    "loadsCompletedWithGoodlane": 4,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "1023456",
+    "companyName": "Anya Volkov LLC",
+    "primaryContact": "Anya Volkov",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.6,
+    "loadsCompletedWithGoodlane": 17,
+    "avgResponseTimeHours": 7,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "1198743",
+    "companyName": "Rob Galloway LLC",
+    "primaryContact": "Rob Galloway",
+    "equipmentTypes": [
+      "Flatbed"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.8,
+    "loadsCompletedWithGoodlane": 4,
+    "avgResponseTimeHours": 4,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "1345678",
+    "companyName": "Simone Archer LLC",
+    "primaryContact": "Simone Archer",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 3.8,
+    "loadsCompletedWithGoodlane": 19,
+    "avgResponseTimeHours": 1,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "1480355",
+    "companyName": "Lilly Morgan LLC",
+    "primaryContact": "Lilly Morgan",
+    "equipmentTypes": [
+      "Sprinter Van"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.5,
+    "loadsCompletedWithGoodlane": 16,
+    "avgResponseTimeHours": 6,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  },
+  {
+    "mcNumber": "1510341",
+    "companyName": "Marcus Duffy LLC",
+    "primaryContact": "Marcus Duffy",
+    "equipmentTypes": [
+      "Box Truck"
+    ],
+    "preferredLanes": [
+      "Northeast"
+    ],
+    "reliabilityScore": 4.6,
+    "loadsCompletedWithGoodlane": 2,
+    "avgResponseTimeHours": 2,
+    "insuranceExpiry": "2026-12-01",
+    "authorityStatus": "active",
+    "safetyRating": "satisfactory",
+    "onboarded": true,
+    "notes": ""
+  }
+]

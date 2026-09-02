@@ -1,0 +1,21 @@
+.carrier-conversations {
+  height: calc(100vh - 60px);
+  overflow: auto;
+  background: #f8f9fb;
+}
+
+.thread-table-shell {
+  overflow: hidden;
+}
+
+.thread-row--conversation {
+  background: rgba(34, 139, 230, 0.04);
+}
+
+.thread-row--single {
+  background: #fff;
+}
+
+.thread-row:hover {
+  background: rgba(34, 139, 230, 0.08);
+}
