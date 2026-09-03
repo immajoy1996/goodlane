@@ -4,6 +4,24 @@ AI assistant for freight brokers at Goodlane Logistics. It ingests inbound carri
 
 Brokers can ask which carriers confirmed on a load, what the best current offer is, pull carrier compliance history, compare rates to lane benchmarks, and draft follow-up emails — all grounded in real interaction data, not model guesses.
 
+## How to run
+
+```bash
+npm install
+cp .env.example .env   # then fill in the Lambda URLs
+npm run dev
+```
+
+Open the URL Vite prints (usually `http://localhost:5173`). Click **Prepare Knowledge Base** before using the Agent tab.
+
+Required env vars (see `.env.example`):
+
+- `VITE_OPENAI_CHAT_URL` — chat / tool-calling Lambda
+- `VITE_TRANSCRIBE_AUDIO_URL` — call transcription Lambda (optional until you process recordings)
+- `VITE_ANALYSIS_MODEL` — optional; defaults to `gpt-4.1-mini`
+
+Other scripts: `npm run build`, `npm run preview`, `npm run lint`.
+
 ## Stack
 
 | Layer | Choice | Why |

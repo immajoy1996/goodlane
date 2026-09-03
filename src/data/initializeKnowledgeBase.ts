@@ -1,6 +1,6 @@
 import carrierEmailsData from '../../data/carrier_emails.json'
 import carrierProfilesData from '../../data/carrier_profiles.json'
-import type { CarrierEmail } from '../types/email'
+import type { CarrierEmail, EmailAnalysis } from '../types/email'
 import type { CarrierInteraction } from '../types/interactions'
 import type { EnrichedCall, RawCallRecording } from '../types/calls'
 import { analyzeCall, normalizeCallAnalysis } from '../services/callAnalysis'
@@ -11,6 +11,8 @@ import {
   saveAnalysis,
   saveTranscript,
 } from '../services/callStorage'
+import { analyzeEmail, emailLikelyHasRateContent, normalizeEmailAnalysis } from '../services/emailAnalysis'
+import { loadStoredEmailAnalysis, saveEmailAnalysis } from '../services/emailStorage'
 import { transcribeCall } from '../services/callTranscription'
 import { emailToInteraction, callToInteraction } from '../services/conversations'
 import { normalizeMcNumber } from '../services/emailThreading'
@@ -35,14 +37,21 @@ export type InitProgress = {
   phase: string
   emailsLoaded: number
   emailsTotal: number
+  emailsAnalyzed: number
+  emailsToAnalyze: number
   callsProcessed: number
   callsTotal: number
   currentCallFileName: string | null
+  currentEmailId: string | null
   warnings: string[]
 }
 
 export type KnowledgeBaseSummary = {
   emailsLoaded: number
+  emailsAnalyzed: number
+  emailsFromCache: number
+  emailsNewlyAnalyzed: number
+  emailAnalysisFailures: number
   callsTotal: number
   callsProcessed: number
   callsFromCache: number
@@ -83,6 +92,84 @@ function loadSupportingData() {
 }
 
 const CALL_PROCESSING_CONCURRENCY = 4
+const EMAIL_ANALYSIS_CONCURRENCY = 4
+
+async function processEmailAnalyses(
+  emails: CarrierEmail[],
+  onProgress: (update: Partial<InitProgress>) => void,
+  warnings: string[],
+): Promise<{
+  analysisById: Record<string, EmailAnalysis>
+  emailsAnalyzed: number
+  emailsFromCache: number
+  emailsNewlyAnalyzed: number
+  emailAnalysisFailures: number
+}> {
+  const cached = loadStoredEmailAnalysis()
+  const analysisById: Record<string, EmailAnalysis> = {}
+  const toAnalyze = emails.filter(
+    (email) => email.rate_quoted_usd == null && emailLikelyHasRateContent(email),
+  )
+
+  let emailsFromCache = 0
+  let emailsNewlyAnalyzed = 0
+  let emailAnalysisFailures = 0
+  let emailsCompleted = 0
+
+  onProgress({
+    emailsToAnalyze: toAnalyze.length,
+    emailsAnalyzed: 0,
+    phase: toAnalyze.length > 0 ? 'Analyzing emails' : 'Normalizing emails',
+  })
+
+  await runWithConcurrency(toAnalyze, EMAIL_ANALYSIS_CONCURRENCY, async (email) => {
+    onProgress({
+      currentEmailId: email.email_id,
+      emailsAnalyzed: emailsCompleted,
+      phase: 'Analyzing emails',
+    })
+
+    const cachedAnalysis = cached[email.email_id]
+    if (cachedAnalysis) {
+      analysisById[email.email_id] = normalizeEmailAnalysis(cachedAnalysis)
+      emailsFromCache += 1
+    } else {
+      try {
+        const analysis = await analyzeEmail(email)
+        saveEmailAnalysis(email.email_id, analysis)
+        analysisById[email.email_id] = analysis
+        emailsNewlyAnalyzed += 1
+      } catch (error) {
+        emailAnalysisFailures += 1
+        warnings.push(
+          `${email.email_id} analysis failed: ${
+            error instanceof Error ? error.message : 'unknown error'
+          }`,
+        )
+      }
+    }
+
+    emailsCompleted += 1
+    onProgress({
+      emailsAnalyzed: emailsCompleted,
+      currentEmailId: email.email_id,
+      phase: 'Analyzing emails',
+    })
+  })
+
+  onProgress({
+    emailsAnalyzed: toAnalyze.length,
+    currentEmailId: null,
+  })
+
+  return {
+    analysisById,
+    emailsAnalyzed: toAnalyze.length,
+    emailsFromCache,
+    emailsNewlyAnalyzed,
+    emailAnalysisFailures,
+  }
+}
 
 async function processCalls(
   recordings: RawCallRecording[],
@@ -241,9 +328,12 @@ export async function initializeKnowledgeBase(
     phase: 'Loading emails',
     emailsLoaded: 0,
     emailsTotal: 0,
+    emailsAnalyzed: 0,
+    emailsToAnalyze: 0,
     callsProcessed: 0,
     callsTotal: 0,
     currentCallFileName: null,
+    currentEmailId: null,
     warnings,
   }
 
@@ -254,10 +344,26 @@ export async function initializeKnowledgeBase(
   const emails = loadEmails()
   progress.emailsTotal = emails.length
   progress.emailsLoaded = emails.length
+  progress.phase = 'Analyzing emails'
+  report()
+
+  const {
+    analysisById,
+    emailsAnalyzed,
+    emailsFromCache,
+    emailsNewlyAnalyzed,
+    emailAnalysisFailures,
+  } = await processEmailAnalyses(emails, (update) => {
+    Object.assign(progress, update)
+    report()
+  }, warnings)
+
   progress.phase = 'Normalizing emails'
   report()
 
-  const emailInteractions = emails.map(emailToInteraction)
+  const emailInteractions = emails.map((email) =>
+    emailToInteraction(email, analysisById[email.email_id] ?? null),
+  )
 
   const recordings = discoverCallRecordings()
   progress.callsTotal = recordings.length
@@ -303,6 +409,10 @@ export async function initializeKnowledgeBase(
 
   const summary: KnowledgeBaseSummary = {
     emailsLoaded: emails.length,
+    emailsAnalyzed,
+    emailsFromCache,
+    emailsNewlyAnalyzed,
+    emailAnalysisFailures,
     callsTotal: recordings.length,
     callsProcessed: processedCalls.length,
     callsFromCache,
@@ -319,6 +429,9 @@ export async function initializeKnowledgeBase(
 
   console.log('Goodlane knowledge base ready')
   console.log(`Emails: ${summary.emailsLoaded}`)
+  console.log(
+    `Email analysis: ${summary.emailsNewlyAnalyzed} new, ${summary.emailsFromCache} cached, ${summary.emailAnalysisFailures} failed`,
+  )
   console.log(`Calls: ${summary.callsTotal}`)
   console.log(`Call failures: ${summary.callFailures}`)
   console.log(`Interactions: ${summary.totalInteractions}`)

@@ -119,12 +119,18 @@ export function AgentPage({
                     <Text size="sm">{knowledgeProgress.phase}</Text>
                   </Group>
                   <Text size="sm">
-                    Emails: {knowledgeProgress.emailsLoaded} / {knowledgeProgress.emailsTotal}
+                    Emails analyzed: {knowledgeProgress.emailsAnalyzed} /{' '}
+                    {knowledgeProgress.emailsToAnalyze || knowledgeProgress.emailsTotal}
                   </Text>
                   <Text size="sm">
                     Calls processed: {knowledgeProgress.callsProcessed} /{' '}
                     {knowledgeProgress.callsTotal}
                   </Text>
+                  {knowledgeProgress.currentEmailId && (
+                    <Text size="sm" c="dimmed">
+                      Analyzing: {knowledgeProgress.currentEmailId}
+                    </Text>
+                  )}
                   {knowledgeProgress.currentCallFileName && (
                     <Text size="sm" c="dimmed">
                       Transcribing: {knowledgeProgress.currentCallFileName}

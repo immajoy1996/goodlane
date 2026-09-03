@@ -1,4 +1,4 @@
-import type { CarrierEmail } from '../types/email'
+import type { CarrierEmail, EmailAnalysis } from '../types/email'
 import type { EnrichedCall } from '../types/calls'
 import type { CarrierInteraction, Conversation, ConversationState } from '../types/interactions'
 import { normalizeMcNumber, resolveLoadReference } from './emailThreading'
@@ -11,20 +11,22 @@ import { applyOverridesToInteractions } from './interactionOverrides'
 
 // --- adapters: email / call → CarrierInteraction ---
 
-export function emailToInteraction(email: CarrierEmail): CarrierInteraction {
+export function emailToInteraction(
+  email: CarrierEmail,
+  analysis?: EmailAnalysis | null,
+): CarrierInteraction {
   const load = resolveLoadReference(email)
-  const rate = email.rate_quoted_usd
+  const { carrierRate, brokerRate, agreedRate } = resolveEmailRates(email, analysis)
+  const availability = resolveEmailAvailability(email, analysis)
+  const questions =
+    analysis && analysis.questionsFromCarrier.length > 0
+      ? analysis.questionsFromCarrier
+      : extractQuestions(`${email.subject}\n${email.body}`)
 
-  let carrierRate: number | null = null
-  let agreedRate: number | null = null
-
-  if (rate != null) {
-    if (email.intent === 'confirm') {
-      agreedRate = rate
-    } else {
-      carrierRate = rate
-    }
-  }
+  const messageWarnings = [
+    ...load.messageWarnings,
+    ...(analysis?.warnings ?? []),
+  ]
 
   return enrichInteraction(
     {
@@ -33,12 +35,12 @@ export function emailToInteraction(email: CarrierEmail): CarrierInteraction {
       loadId: load.resolvedLoadReference,
       carrierName: email.from_name,
       mcNumber: normalizeMcNumber(email.mc_number),
-      availability: email.intent === 'confirm' ? 'confirmed' : null,
+      availability,
       carrierRate,
-      brokerRate: null,
+      brokerRate,
       agreedRate,
       equipment: email.equipment_mentioned,
-      questions: extractQuestions(`${email.subject}\n${email.body}`),
+      questions,
       timestamp: email.timestamp,
       rawText: `${email.subject}\n\n${email.body}`,
     },
@@ -46,9 +48,48 @@ export function emailToInteraction(email: CarrierEmail): CarrierInteraction {
       loadResolutionSource: load.loadResolutionSource,
       rawLoadReference: load.rawLoadReference,
       fromEmail: email.from_email,
-      messageWarnings: load.messageWarnings,
+      messageWarnings,
+      needsHumanReview: analysis?.needsHumanReview,
+      analysisConfidence: analysis?.confidence,
     },
   )
+}
+
+function resolveEmailRates(
+  email: CarrierEmail,
+  analysis?: EmailAnalysis | null,
+): {
+  carrierRate: number | null
+  brokerRate: number | null
+  agreedRate: number | null
+} {
+  let carrierRate = analysis?.carrierAskUsd ?? null
+  let brokerRate = analysis?.brokerRateMentionedUsd ?? null
+  let agreedRate = analysis?.agreedRateUsd ?? null
+
+  // Structured dataset field is a fallback when LLM extraction is absent/incomplete.
+  const structuredRate = email.rate_quoted_usd
+  if (structuredRate != null && carrierRate == null && agreedRate == null) {
+    if (email.intent === 'confirm' || analysis?.rateStatus === 'accepted') {
+      agreedRate = structuredRate
+    } else {
+      carrierRate = structuredRate
+    }
+  }
+
+  return { carrierRate, brokerRate, agreedRate }
+}
+
+function resolveEmailAvailability(
+  email: CarrierEmail,
+  analysis?: EmailAnalysis | null,
+): string | null {
+  if (analysis?.availability && analysis.availability !== 'unknown') {
+    return analysis.availability
+  }
+
+  if (email.intent === 'confirm') return 'confirmed'
+  return null
 }
 
 export function callToInteraction(call: EnrichedCall): CarrierInteraction {

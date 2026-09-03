@@ -67,8 +67,8 @@ function App() {
             <Group gap="xs">
               <Loader size="xs" />
               <Text size="sm">
-                Preparing… Emails {knowledgeProgress?.emailsLoaded ?? 0}/
-                {knowledgeProgress?.emailsTotal ?? 0} · Calls{' '}
+                Preparing… Emails {knowledgeProgress?.emailsAnalyzed ?? 0}/
+                {knowledgeProgress?.emailsToAnalyze ?? knowledgeProgress?.emailsTotal ?? 0} · Calls{' '}
                 {knowledgeProgress?.callsProcessed ?? 0}/{knowledgeProgress?.callsTotal ?? 0}
               </Text>
             </Group>

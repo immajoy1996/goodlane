@@ -1,3 +1,5 @@
+import type { CallAvailability, CallRateStatus } from './calls'
+
 export type CarrierEmail = {
   email_id: string
   timestamp: string
@@ -11,6 +13,19 @@ export type CarrierEmail = {
   equipment_mentioned: string | null
   rate_quoted_usd: number | null
   intent: string | null
+}
+
+/** LLM-extracted rate / availability fields from email body prose. */
+export type EmailAnalysis = {
+  brokerRateMentionedUsd: number | null
+  carrierAskUsd: number | null
+  agreedRateUsd: number | null
+  rateStatus: CallRateStatus
+  availability: CallAvailability
+  questionsFromCarrier: string[]
+  confidence: number
+  warnings: string[]
+  needsHumanReview: boolean
 }
 
 export type LoadResolutionSource =
